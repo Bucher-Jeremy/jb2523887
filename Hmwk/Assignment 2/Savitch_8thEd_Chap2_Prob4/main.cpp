@@ -20,9 +20,9 @@ int main( ) {
     //while (end > 0)
     //{    
     //end = 0;
-    const float pyincrs = 7.6e-2;
-    float pransal, rtropay,nmonsal, odmnths;
-    unsigned short nmmnths;
+    const float pyincrs = 7.6e-2;//pay increase percentage
+    float pransal, rtropay,nmonsal, odmnths; //previous annual salary,retroactive pay, new monthly salary, old monthly salary
+    unsigned short nmmnths; //number of months
     cout <<"Enter previous annual salary, followed by the number of months the raise is retroactive for.\n";
     cin >>pransal>>nmmnths ;
     nmonsal = ((pyincrs*pransal)+pransal)/12;

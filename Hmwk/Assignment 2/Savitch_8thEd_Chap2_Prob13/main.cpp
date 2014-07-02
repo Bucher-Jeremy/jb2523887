@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     
     cout<<"Your pace is "<<pacemin<<"minutes and "<<pacesec<<" seconds per mile.";
     
-
+//intMin=minutes subtract the float minutes by intmin and that is the remaining fraction then convert the freaction to seconds
     return 0;
 }
 

@@ -5,6 +5,9 @@
  * Created on July 1, 2014, 10:41 PM
  */
 
+
+#include <iostream>
+using namespace std;
 //User Defined Libraries
 
 //Global Constants
@@ -12,9 +15,6 @@
 //Function Prototypes
 
 //Execution Begins Here
-#include <iostream>
-using namespace std;
-
 int main(int argc, char** argv) {
     
     //Inputs

@@ -11,8 +11,8 @@ using namespace std;
 //User Defined Libraries
 
 //Global Constants
-const short hrToMin=60; //1hr=60min
-const short minToSec=60; //1min=60sec
+const float HRTOMIN=60;                //1hr=60min
+const float MNTOSEC=HRTOMIN;           //1min=60sec
 
 //Function Prototypes
 
@@ -20,21 +20,28 @@ const short minToSec=60; //1min=60sec
 int main(int argc, char** argv) {
     
     //Input
-    float mph;
+    float mph=0;                       //Fractional mph
+    short miph=0;                      //Integer mph
     
     //Outputs
-    short pacemin,pacesec;
-    
+    float pacemin=0;                   //Fractional pace in minutes
+    short pacesec=0;                   //Integer pace in seconds
+    short Pacemin=0;                   //Integer pace in minutes
+    float mphRec=0;                    //Reciprocal of mph
+        
+    //Aquire Input
     cout<<"Enter speed in MPH."<<endl;
     cin>>mph;
-    short hdthmph;
-    hdthmph=mph/100;
-    pacemin=hrToMin/mph;
-    pacesec=((hrToMin%hdthmph)*100)*minToSec;
     
-    cout<<"Your pace is "<<pacemin<<"minutes and "<<pacesec<<" seconds per mile.";
+    //Calculations
+    mphRec=1/mph;
+    pacemin=mphRec*HRTOMIN;
+    Pacemin=mphRec*HRTOMIN;
+    pacesec=(pacemin-Pacemin)*MNTOSEC;
     
-//intMin=minutes subtract the float minutes by intmin and that is the remaining fraction then convert the freaction to seconds
+    //Display outputs
+    cout<<"Your pace is "<<Pacemin<<" minutes and "<<pacesec<<" seconds per mile.";
+    
     return 0;
 }
 

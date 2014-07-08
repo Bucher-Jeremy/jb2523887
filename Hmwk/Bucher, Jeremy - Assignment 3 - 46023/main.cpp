@@ -6,6 +6,7 @@
 
 //System Libraries
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 //User Libraries
@@ -23,7 +24,7 @@ int main(int argc, char** argv) {
     cout<<"Enter the number of the problem you wish to solve listed in the chart below."<<endl;
     cout<<"--------------------------------"<<endl;
     cout<<"1  --> Savitch_8thEd_Chap3_Prob1"<<endl;
-    cout<<"2  --> Savitch_8thEd_Chap3_Prob1"<<endl;
+    cout<<"2  --> Savitch_8thEd_Chap3_Prob2"<<endl;
     cout<<"3  --> Savitch_8thEd_Chap3_Prob1"<<endl;
     cout<<"4  --> Savitch_8thEd_Chap3_Prob1"<<endl;
     cout<<"5  --> Savitch_8thEd_Chap3_Prob1"<<endl;
@@ -70,7 +71,44 @@ int main(int argc, char** argv) {
             cout<<"The basis for determining the winner: Paper covers rock, Rock breaks scissors, Sissors cut paper, or Nobody wins."<<endl;
             break;
         case 2:
-            cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
+            cout<<"Executing Savitch_8thEd_Chap3_Prob2."<<endl;
+            
+            //declare variables
+            float acntBal, //account balance
+                  intDue, //interest due
+                  intRte, //interest rate
+                  totAmt, //total amount due
+                  minPymnt; //minimum payment
+            
+            //aquire account balance
+            cout<<"Please enter the account balance:"<<endl;
+            cin>>acntBal;
+            
+            //decide interest rate
+            if (acntBal<=1000) {
+                intRte=1.5e-2;
+            }
+            else {
+                intRte=1e-2;
+            }
+            
+            //calculate interest due and total amount due
+            intDue=acntBal*intRte;
+            totAmt=intDue+acntBal;
+            
+            //Decide what the minimum payment is
+            if (totAmt <=10) {
+                minPymnt=totAmt;
+            }
+            else {
+                minPymnt=totAmt*1e-1;
+            }
+            
+            //output interest due, total amount due, and the minimum payment
+            cout<<fixed<<showpoint<<setprecision(2)
+                <<"The Interest due is: $"<<intDue<<endl
+                <<"The Total Amount due is: $"<<totAmt<<endl
+                <<"The Minimum Payment is: $"<<minPymnt;    
             break;
         case 3:
             cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;

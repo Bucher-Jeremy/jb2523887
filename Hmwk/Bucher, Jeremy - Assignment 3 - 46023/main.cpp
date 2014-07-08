@@ -7,6 +7,7 @@
 //System Libraries
 #include <iostream>
 #include <iomanip>
+#include <string>
 using namespace std;
 
 //User Libraries
@@ -25,8 +26,8 @@ int main(int argc, char** argv) {
     cout<<"--------------------------------"<<endl;
     cout<<"1  --> Savitch_8thEd_Chap3_Prob1"<<endl;
     cout<<"2  --> Savitch_8thEd_Chap3_Prob2"<<endl;
-    cout<<"3  --> Savitch_8thEd_Chap3_Prob1"<<endl;
-    cout<<"4  --> Savitch_8thEd_Chap3_Prob1"<<endl;
+    cout<<"3  --> Savitch_8thEd_Chap3_Prob5"<<endl;
+    cout<<"4  --> Savitch_8thEd_Chap3_Prob7 - This problem is not solved"<<endl;
     cout<<"5  --> Savitch_8thEd_Chap3_Prob1"<<endl;
     cout<<"6  --> Savitch_8thEd_Chap3_Prob1"<<endl;
     cout<<"7  --> Savitch_8thEd_Chap3_Prob1"<<endl;
@@ -38,6 +39,8 @@ int main(int argc, char** argv) {
     
     //Determine which program to run
     switch (menitm){
+        
+        
         case 1:
             //Declare Variables
             char move1, move2;
@@ -70,6 +73,8 @@ int main(int argc, char** argv) {
             else
             cout<<"The basis for determining the winner: Paper covers rock, Rock breaks scissors, Sissors cut paper, or Nobody wins."<<endl;
             break;
+            
+            
         case 2:
             cout<<"Executing Savitch_8thEd_Chap3_Prob2."<<endl;
             
@@ -110,30 +115,2660 @@ int main(int argc, char** argv) {
                 <<"The Total Amount due is: $"<<totAmt<<endl
                 <<"The Minimum Payment is: $"<<minPymnt;    
             break;
+            
+            
         case 3:
-            cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
+            cout<<"Executing Savitch_8thEd_Chap3_Prob5."<<endl;
+            cout<<"-Cost of a long distance call-"<<endl;
+            //declare variables
+            float bllRte, cost;    //billing rate, cost of call
+            short cllDur; //call duration
+            char hour; //hour in which call was stared
+            char dy1,dy2;//day the call was made
+            
+            //obtain day and hour
+            cout<<"What day of the week? Mo Tu We Th Fr Sa Su"<<endl;
+            cin>>dy1>>dy2;
+            cout<<"What hour? Please us military time 1-24"<<endl;
+            cin>>hour;
+            
+            
+            //determine billing rate
+            if (dy1=='S'||dy1=='s'){
+                bllRte=1.5e-1;
+            }
+            else {
+                
+            if (hour>=8&&hour<=18) {
+                    bllRte=4e-1;
+            }
+            if (hour<8&&hour>0) {
+                    bllRte=2.5e-1;
+            }
+            if (hour<=24&&hour>18) {
+                    bllRte=2.5e-1;
+            }
+            else {
+                cout<<"You entered the data incorrectly the calculations made are invalid";
+            }
+            }
+            
+            cout<<"How many minutes did the call last?"<<endl;
+            cin>>cllDur;
+            
+            //calculate cost
+            cost=bllRte*cllDur;
+            
+            //output cost
+            cout<<fixed<<showpoint<<setprecision(2)<<"The cost of your call is: $"<<cost;
+          
             break;
+            
+            
         case 4:
-            cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
+            cout<<"Executing Savitch_8thEd_Chap3_Prob7."<<endl;
+            cout<<"-Converting a year to Roman numerals-"<<endl;
+            
+            //Declare Variables
+            short year;
+                        
+            //input year
+            cout<<"Enter the year you would like to convert to Roman numerals"<<endl;
+            cin>>year;
+            
+            if (year==3000) {
+                cout<<"MMM";
+            }
+            if (year<3000&&year>=2000){
+                cout<<"MM";
+                year-=2000;
+                if (year>=900){
+                    cout<<"CM";
+                    year-=900;
+                           if (year>=90){
+                               cout<<"XC";
+                               year-=90;
+                                    if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=80){
+                               cout<<"LXXX";
+                               year-=80;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=70){
+                               cout<<"LXX";
+                               year-=70;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=60){
+                               cout<<"LX";
+                               year-=60;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=50){
+                               cout<<"L";
+                               year-=50;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=40){
+                               cout<<"XL";
+                               year-=40;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=30){
+                               cout<<"XXX";
+                               year-=30;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=20){
+                               cout<<"XX";
+                               year-=20;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=10){
+                               cout<<"X";
+                               year-=10;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                }
+                if (year>=800){
+                    cout<<"DCCC";
+                    year-=800;
+                    if (year>=90){
+                               cout<<"XC";
+                               year-=90;
+                                    if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=80){
+                               cout<<"LXXX";
+                               year-=80;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=70){
+                               cout<<"LXX";
+                               year-=70;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=60){
+                               cout<<"LX";
+                               year-=60;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=50){
+                               cout<<"L";
+                               year-=50;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=40){
+                               cout<<"XL";
+                               year-=40;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=30){
+                               cout<<"XXX";
+                               year-=30;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=20){
+                               cout<<"XX";
+                               year-=20;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=10){
+                               cout<<"X";
+                               year-=10;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                }
+                if (year>=700){
+                    cout<<"DCC";
+                    year-=700;
+                    if (year>=90){
+                               cout<<"XC";
+                               year-=90;
+                                    if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=80){
+                               cout<<"LXXX";
+                               year-=80;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=70){
+                               cout<<"LXX";
+                               year-=70;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=60){
+                               cout<<"LX";
+                               year-=60;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=50){
+                               cout<<"L";
+                               year-=50;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=40){
+                               cout<<"XL";
+                               year-=40;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=30){
+                               cout<<"XXX";
+                               year-=30;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=20){
+                               cout<<"XX";
+                               year-=20;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=10){
+                               cout<<"X";
+                               year-=10;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                }
+                if (year>=600){
+                    cout<<"DC";
+                    year-=600;
+                    if (year>=90){
+                               cout<<"XC";
+                               year-=90;
+                                    if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=80){
+                               cout<<"LXXX";
+                               year-=80;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=70){
+                               cout<<"LXX";
+                               year-=70;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=60){
+                               cout<<"LX";
+                               year-=60;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=50){
+                               cout<<"L";
+                               year-=50;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=40){
+                               cout<<"XL";
+                               year-=40;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=30){
+                               cout<<"XXX";
+                               year-=30;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=20){
+                               cout<<"XX";
+                               year-=20;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=10){
+                               cout<<"X";
+                               year-=10;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                }
+                if (year>=500){
+                    cout<<"D";
+                    year-=500;
+                    if (year>=90){
+                               cout<<"XC";
+                               year-=90;
+                                    if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=80){
+                               cout<<"LXXX";
+                               year-=80;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=70){
+                               cout<<"LXX";
+                               year-=70;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=60){
+                               cout<<"LX";
+                               year-=60;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=50){
+                               cout<<"L";
+                               year-=50;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=40){
+                               cout<<"XL";
+                               year-=40;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=30){
+                               cout<<"XXX";
+                               year-=30;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=20){
+                               cout<<"XX";
+                               year-=20;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=10){
+                               cout<<"X";
+                               year-=10;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                }
+                if (year>=400){
+                    cout<<"CD";
+                    year-=400;
+                    if (year>=90){
+                               cout<<"XC";
+                               year-=90;
+                                    if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=80){
+                               cout<<"LXXX";
+                               year-=80;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=70){
+                               cout<<"LXX";
+                               year-=70;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=60){
+                               cout<<"LX";
+                               year-=60;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=50){
+                               cout<<"L";
+                               year-=50;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=40){
+                               cout<<"XL";
+                               year-=40;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=30){
+                               cout<<"XXX";
+                               year-=30;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=20){
+                               cout<<"XX";
+                               year-=20;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=10){
+                               cout<<"X";
+                               year-=10;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                }
+                if (year>=300){
+                    cout<<"CCC";
+                    year-=300;
+                    if (year>=90){
+                               cout<<"XC";
+                               year-=90;
+                                    if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=80){
+                               cout<<"LXXX";
+                               year-=80;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=70){
+                               cout<<"LXX";
+                               year-=70;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=60){
+                               cout<<"LX";
+                               year-=60;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=50){
+                               cout<<"L";
+                               year-=50;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=40){
+                               cout<<"XL";
+                               year-=40;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=30){
+                               cout<<"XXX";
+                               year-=30;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=20){
+                               cout<<"XX";
+                               year-=20;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=10){
+                               cout<<"X";
+                               year-=10;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                }
+                if (year>=200){
+                    cout<<"CC";
+                    year-=200;
+                    if (year>=90){
+                               cout<<"XC";
+                               year-=90;
+                                    if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=80){
+                               cout<<"LXXX";
+                               year-=80;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=70){
+                               cout<<"LXX";
+                               year-=70;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=60){
+                               cout<<"LX";
+                               year-=60;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=50){
+                               cout<<"L";
+                               year-=50;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=40){
+                               cout<<"XL";
+                               year-=40;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=30){
+                               cout<<"XXX";
+                               year-=30;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=20){
+                               cout<<"XX";
+                               year-=20;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=10){
+                               cout<<"X";
+                               year-=10;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                }
+                if (year>=100){
+                    cout<<"C";
+                    year-=100;
+                    if (year>=90){
+                               cout<<"XC";
+                               year-=90;
+                                    if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=80){
+                               cout<<"LXXX";
+                               year-=80;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=70){
+                               cout<<"LXX";
+                               year-=70;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=60){
+                               cout<<"LX";
+                               year-=60;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=50){
+                               cout<<"L";
+                               year-=50;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=40){
+                               cout<<"XL";
+                               year-=40;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=30){
+                               cout<<"XXX";
+                               year-=30;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=20){
+                               cout<<"XX";
+                               year-=20;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                           if (year>=10){
+                               cout<<"X";
+                               year-=10;
+                               if (year=9){
+                                    cout<<"IX";
+                                    }
+                                    if (year=8){
+                                        cout<<"VIII";
+                                    }
+                                    if (year>=7){
+                                        cout<<"VII";
+                                    }
+                                    if (year>=6){
+                                        cout<<"VI";
+                                    }
+                                    if (year>=5){
+                                        cout<<"V";
+                                    }
+                                    if (year>=4){
+                                        cout<<"IV";
+                                    }
+                                    if (year>=3){
+                                        cout<<"III";
+                                    }
+                                    if (year>=2){
+                                        cout<<"II";
+                                    }
+                                    if (year>=1){
+                                        cout<<"I";
+                                    }
+                           }
+                }
+                
+            }
+            else {
+                cout<<"M";
+            }
+            
             break;
+            
+            
         case 5:
             cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
+            
             break;
+            
+            
         case 6:
             cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
             break;
+            
+            
         case 7:
             cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
             break;
+            
+            
         case 8:
             cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
             break;
+            
+            
         case 9:
             cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
             break;
+            
+            
         case 10:
             cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
             break;
+            
+            
         default:
             cout<<"Not a valid menu item. No problem will be solved.";
     }

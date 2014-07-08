@@ -29,13 +29,8 @@ int main(int argc, char** argv) {
     cout<<"1  --> Savitch_8thEd_Chap3_Prob1"<<endl;
     cout<<"2  --> Savitch_8thEd_Chap3_Prob2"<<endl;
     cout<<"3  --> Savitch_8thEd_Chap3_Prob5"<<endl;
-    cout<<"4  --> Savitch_8thEd_Chap3_Prob7 - This problem is not solved"<<endl;
+    cout<<"4  --> Savitch_8thEd_Chap3_Prob7 <-- This problem is not solved"<<endl;
     cout<<"5  --> Savitch_8thEd_Chap3_Prob15"<<endl;
-    cout<<"6  --> Savitch_8thEd_Chap3_Prob1"<<endl;
-    cout<<"7  --> Savitch_8thEd_Chap3_Prob1"<<endl;
-    cout<<"8  --> Savitch_8thEd_Chap3_Prob1"<<endl;
-    cout<<"9  --> Savitch_8thEd_Chap3_Prob1"<<endl;
-    cout<<"10 --> Savitch_8thEd_Chap3_Prob1"<<endl;
     cout<<"--------------------------------"<<endl;
     cin>>menitm;
     
@@ -2769,31 +2764,6 @@ int main(int argc, char** argv) {
             }
             
             
-            break;
-            
-            
-        case 6:
-            cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
-            break;
-            
-            
-        case 7:
-            cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
-            break;
-            
-            
-        case 8:
-            cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
-            break;
-            
-            
-        case 9:
-            cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
-            break;
-            
-            
-        case 10:
-            cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
             break;
             
             

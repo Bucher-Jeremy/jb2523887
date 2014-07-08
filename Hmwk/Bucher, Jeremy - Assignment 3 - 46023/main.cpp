@@ -8,11 +8,13 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <cmath>
 using namespace std;
 
 //User Libraries
 
 //Global Constants
+const float spcWtWa=62.4; //Specific weight of water in lb/(ft^3)
 
 //Function Prototypes
 
@@ -28,7 +30,7 @@ int main(int argc, char** argv) {
     cout<<"2  --> Savitch_8thEd_Chap3_Prob2"<<endl;
     cout<<"3  --> Savitch_8thEd_Chap3_Prob5"<<endl;
     cout<<"4  --> Savitch_8thEd_Chap3_Prob7 - This problem is not solved"<<endl;
-    cout<<"5  --> Savitch_8thEd_Chap3_Prob1"<<endl;
+    cout<<"5  --> Savitch_8thEd_Chap3_Prob15"<<endl;
     cout<<"6  --> Savitch_8thEd_Chap3_Prob1"<<endl;
     cout<<"7  --> Savitch_8thEd_Chap3_Prob1"<<endl;
     cout<<"8  --> Savitch_8thEd_Chap3_Prob1"<<endl;
@@ -2739,7 +2741,33 @@ int main(int argc, char** argv) {
             
             
         case 5:
-            cout<<"Executing Savitch_8thEd_Chap3_Prob1."<<endl;
+            cout<<"Executing Savitch_8thEd_Chap3_Prob15."<<endl;
+            cout<<"-Bouancy of a Sphere-"<<endl;
+            
+            //declare variables
+            float wght, radius, spWtSph, volume; //weight of sphere, radius of sphere, specific weight of sphere, volume
+            
+            //input weight and radius
+            cout<<"Enter the weight of the Sphere in pounds: ";
+            cin>>wght;
+            cout<<"Enter the radius of the sphere in feet: ";
+            cin>>radius;
+            
+            //calculations
+            volume=(4/3)*(M_PI)*radius*radius*radius;
+            spWtSph=wght/volume;
+            
+            //Determine whether the sphere floats or not
+            if (spWtSph<spcWtWa){
+                cout<<"It floats!";
+            }
+            else if (spWtSph>spcWtWa){
+                cout<<"It sinks!";
+            }
+            else {
+                cout<<"It neither sinks nor floats!";
+            }
+            
             
             break;
             

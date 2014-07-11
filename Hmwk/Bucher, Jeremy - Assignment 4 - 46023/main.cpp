@@ -14,8 +14,11 @@ using namespace std;
 //User Libraries
 
 //Global Constants
-const float litTGal=2.64179e-1; //One liter is 0.264179 gallons
-const char crtTCnt=100; //Convert to percent
+const float LITERGL=2.64179e-1;   //One liter is 0.264179 gallons
+const char PERCENT=100;           //Convert to percent
+const float G=6.673e-8;           //Gravitational constant cm^3/(g*sec^2)
+const short KG2G=1000;            //Converts kg to g
+const char M2CM=100;              //Converts m to cm
 
 //Function Prototypes
 
@@ -34,7 +37,7 @@ int main(int argc, char** argv) {
         cout<<"3  --> Savitch_8thEd_Chap4_Prob3"<<endl;
         cout<<"4  --> Savitch_8thEd_Chap4_Prob4"<<endl;
         cout<<"5  --> Savitch_8thEd_Chap4_Prob5"<<endl;
-        cout<<"6  --> Savitch_8thEd_Chap4_Prob6"<<endl;
+        cout<<"6  --> Savitch_8thEd_Chap4_Prob7"<<endl;
         cout<<"7  --> Savitch_8thEd_Chap4_Prob7"<<endl;
         cout<<"8  --> Savitch_8thEd_Chap4_Prob8"<<endl;
         cout<<"9  --> Savitch_8thEd_Chap4_Prob9"<<endl;
@@ -55,19 +58,26 @@ int main(int argc, char** argv) {
                       ,numGal                //Number of gallons
                       ,mpg;                  //Miles per gallon
                 
-                //Obtain inputs
-                cout<<"Enter the number of liters consumed by the car:"<<endl;
-                cin>>numLit;
-                cout<<"Enter the number of miles traveled by the car:"<<endl;
-                cin>>miTrvl;
+                char cntn1; //variable for continuation case 1
+                do{
+                    //Obtain inputs
+                    cout<<"Enter the number of liters consumed by the car:"<<endl;
+                    cin>>numLit;
+                    cout<<"Enter the number of miles traveled by the car:"<<endl;
+                    cin>>miTrvl;
+
+                    //Calculations
+                    numGal=numLit*LITERGL;       //Convert the liters to gallons
+                    mpg=miTrvl/numGal;           //Calculate miles per gallon
+
+                    //Output results
+                    cout<<fixed<<showpoint<<setprecision(2);
+                    cout<<"The gas milage you got during your trip was: "<<mpg<<" miles per gallon."<<endl;
+
+                    cout<<"Would you like to run the program again? Y/N"<<endl;
+                    cin>>cntn1;
+                } while (cntn1=='Y'||cntn1=='y');
                 
-                //Calculations
-                numGal=numLit*litTGal;       //Convert the liters to gallons
-                mpg=miTrvl/numGal;           //Calculate miles per gallon
-                
-                //Output results
-                cout<<fixed<<showpoint<<setprecision(2);
-                cout<<"The gas milage you got during your trip was: "<<mpg<<" miles per gallon."<<endl;
                 cout<<" "<<endl;
                 cout<<" "<<endl; 
                 break;
@@ -89,34 +99,40 @@ int main(int argc, char** argv) {
                       ,numGalS                //Number of gallons
                       ,mpgS;                  //Miles per gallon
                 
-                //Obtain inputs
-                cout<<"Enter the number of liters consumed by the first car:"<<endl;
-                cin>>numLitF;
-                cout<<"Enter the number of miles traveled by the first car:"<<endl;
-                cin>>miTrvlF;
-                cout<<"Enter the number of liters consumed by the second car:"<<endl;
-                cin>>numLitS;
-                cout<<"Enter the number of miles traveled by the second car:"<<endl;
-                cin>>miTrvlS;
-                
-                //Calculations
-                numGalF=numLitF*litTGal;       //Convert the liters to gallons
-                mpgF=miTrvlF/numGalF;           //Calculate miles per gallon
-                numGalS=numLitS*litTGal;       //Convert the liters to gallons
-                mpgS=miTrvlS/numGalS;           //Calculate miles per gallon
-                
-                //Output results
-                cout<<fixed<<showpoint<<setprecision(2);
-                cout<<"The gas milage the first car got during its trip was: "<<mpgF<<" miles per gallon."<<endl;
-                cout<<"The gas milage the second car got during its trip was: "<<mpgS<<" miles per gallon."<<endl;
-                
-                //Determine & output which car has the best mpg
-                if (mpgF>mpgS){
-                    cout<<"The first car has the best fuel efficiency!";
-                }
-                else{
-                    cout<<"The second car has the best fuel efficiency!";
-                }
+                char cntn2; //variable for continuation case 2
+                do{
+                    //Obtain inputs
+                    cout<<"Enter the number of liters consumed by the first car:"<<endl;
+                    cin>>numLitF;
+                    cout<<"Enter the number of miles traveled by the first car:"<<endl;
+                    cin>>miTrvlF;
+                    cout<<"Enter the number of liters consumed by the second car:"<<endl;
+                    cin>>numLitS;
+                    cout<<"Enter the number of miles traveled by the second car:"<<endl;
+                    cin>>miTrvlS;
+
+                    //Calculations
+                    numGalF=numLitF*LITERGL;        //Convert the liters to gallons
+                    mpgF=miTrvlF/numGalF;           //Calculate miles per gallon
+                    numGalS=numLitS*LITERGL;        //Convert the liters to gallons
+                    mpgS=miTrvlS/numGalS;           //Calculate miles per gallon
+
+                    //Output results
+                    cout<<fixed<<showpoint<<setprecision(2);
+                    cout<<"The gas milage the first car got during its trip was: "<<mpgF<<" miles per gallon."<<endl;
+                    cout<<"The gas milage the second car got during its trip was: "<<mpgS<<" miles per gallon."<<endl;
+
+                    //Determine & output which car has the best mpg
+                    if (mpgF>mpgS){
+                        cout<<"The first car has the best fuel efficiency!"<<endl;
+                    }
+                    else{
+                        cout<<"The second car has the best fuel efficiency!"<<endl;
+                    }
+
+                     cout<<"Would you like to run the program again? Y/N"<<endl;
+                    cin>>cntn2;
+                } while (cntn2=='Y'||cntn2=='y');
                 cout<<" "<<endl;
                 cout<<" "<<endl;
                 break;
@@ -127,32 +143,41 @@ int main(int argc, char** argv) {
                 cout<<" "<<endl;
                 
                 //Declare variables
-                short numShar, whleDlr, numer, denom;
-                float fract, ppshare, value;
-                char cnCseTh; //continuation variable for case three
-                //Obtain inputs
-                cout<<"Enter the number of shares of stock owned: ";
-                cin>>numShar;
-                cout<<"Enter the whole dollar portion of the price of each share: ";
-                cin>>whleDlr;
+                short numShar, whleDlr, numer, denom;     //number of shares,whole dollar value,numerator,&denominator
+                float fract, ppshare, value;              //fractional value,price per share, value of holding
+                char cnCseTh;                             //continuation variable for case three
                 
-                //Do while loop to make sure the user enters the correct fractional portion of the price
+                char cntn3; //variable for continuation
                 do{
-                cout<<"Enter the numerator of the fractional portion of the price of each share: ";
-                cin>>numer;
-                cout<<"Enter the denominator of the fractional portion of the price of each share: ";
-                cin>>denom;
-                cout<<"Is this the fraction you want to enter? Y/N"<<endl;
-                cout<<numer<<"/"<<denom<<endl;
-                cin>>cnCseTh;
-                } while (cnCseTh=='N'||cnCseTh=='n');
-                
-                fract=(numer*1.0f)/denom;
-                ppshare=whleDlr+fract;
-                value=numShar*ppshare;
-                
-                cout<<fixed<<showpoint<<setprecision(2);
-                cout<<"The value of your holdings is: $"<<value<<endl; 
+                    //Obtain inputs
+                    cout<<"Enter the number of shares of stock owned: ";
+                    cin>>numShar;
+                    cout<<"Enter the whole dollar portion of the price of each share: ";
+                    cin>>whleDlr;
+
+                    //Do while loop to make sure the user enters the correct fractional portion of the price
+                    do{
+                        cout<<"Enter the numerator of the fractional portion of the price of each share: ";
+                        cin>>numer;
+                        cout<<"Enter the denominator of the fractional portion of the price of each share: ";
+                        cin>>denom;
+                        cout<<"Is this the fraction you want to enter? Y/N"<<endl;
+                        cout<<numer<<"/"<<denom<<endl;
+                        cin>>cnCseTh;
+                    } while (cnCseTh=='N'||cnCseTh=='n');
+
+                    //Calculate total value of the holding
+                    fract=(numer*1.0f)/denom;
+                    ppshare=whleDlr+fract;
+                    value=numShar*ppshare;
+
+                    //Output value
+                    cout<<fixed<<showpoint<<setprecision(2);
+                    cout<<"The value of your holdings is: $"<<value<<endl; 
+
+                    cout<<"Would you like to calculate the value of your holdings again? Y/N"<<endl;
+                    cin>>cntn3;
+                } while (cntn3=='Y'||cntn3=='y');
                 break;
 
             case 4:
@@ -160,40 +185,98 @@ int main(int argc, char** argv) {
                 cout<<" "<<endl;
                 cout<<" "<<endl;
                 
-                char cntn;
+                char cntn4; //variable for continuation case 4
                 do{
                 
-                //Declare variables
-                float priceYr, priceTd, inflRte;
-                
-                //Obtain inputs
-                cout<<"Enter the price of an item one year ago: $";
-                cin>>priceYr;
-                cout<<"Enter the price of that same item today: $";
-                cin>>priceTd;
-                
-                inflRte=((priceTd-priceYr)/priceYr)*crtTCnt;
-                
-                //Output inflation rate
-                cout<<"The rate of inflation is: "<<inflRte<<"%"<<endl;
-                
-                
-                cout<<"Would you like to calculate the rate of inflation again? Y/N"<<endl;
-                cin>>cntn;
-                } while (cntn=='Y'||cntn=='y');
+                    //Declare variables
+                    float priceYr, priceTd, inflRte;      //price one year ago,price today,inflation rate
+
+                    //Obtain inputs
+                    cout<<"Enter the price of an item one year ago: $";
+                    cin>>priceYr;
+                    cout<<"Enter the price of that same item today: $";
+                    cin>>priceTd;
+
+                    //Calculate inflation rate
+                    inflRte=((priceTd-priceYr)/priceYr)*PERCENT;
+
+                    //Output inflation rate
+                    cout<<"The rate of inflation is: "<<inflRte<<"%"<<endl;
+
+
+                    cout<<"Would you like to calculate the rate of inflation again? Y/N"<<endl;
+                    cin>>cntn4;
+                } while (cntn4=='Y'||cntn4=='y');
                 
                 break;
 
             case 5:
-                cout<<"Executing Savitch_8thEd_Chap4_Prob15."<<endl;
+                cout<<"Executing Savitch_8thEd_Chap4_Prob5."<<endl;
                 cout<<" "<<endl;
                 cout<<" "<<endl;
+                
+                char cntn5; //variable for continuation case 5
+                do{
+
+                    //Declare variables
+                    float priceYr, priceTd, inflRte       //price one year ago,price today,inflation rate
+                    ,priceNy, priceTY, inflPrt;           //price next year,price in two years,inflation percent
+
+                    //Obtain inputs
+                    cout<<"Enter the price of an item one year ago: $";
+                    cin>>priceYr;
+                    cout<<"Enter the price of that same item today: $";
+                    cin>>priceTd;
+
+                    //Calculate inflation rate
+                    inflRte=((priceTd-priceYr)/priceYr);
+                    inflPrt=inflRte*PERCENT;
+
+                    //Calculate price next year and the year after
+                    priceNy=(priceTd*inflRte)+priceTd;
+                    priceTY=(priceNy*inflRte)+priceNy;
+
+                    //Output inflation rate
+                    cout<<"The rate of inflation is: "<<inflPrt<<"%"<<endl
+                        <<"The estimated price of that item next year is: $"<<priceNy<<endl
+                        <<"The estimated price of that item in two years is: $"<<priceTY<<endl;
+
+
+                    cout<<"Would you like to calculate the rate of inflation again? Y/N"<<endl;
+                    cin>>cntn5;
+                } while (cntn5=='Y'||cntn5=='y');
                 break;
 
             case 6:
-                cout<<"Executing Savitch_8thEd_Chap4_Prob15."<<endl;
+                cout<<"Executing Savitch_8thEd_Chap4_Prob7."<<endl;
                 cout<<" "<<endl;
                 cout<<" "<<endl;
+                
+                //Declare variables
+                float m1, m2, dist, force; //mass one,mass two,distance between objects,force of gravity
+                char cntn6; //variable for continuation case 6
+                do{
+                    //Obtain inputs
+                    cout<<"Enter the mass of body one in kg: ";
+                    cin>>m1;
+                    cout<<"Enter the mass of body two in kg: ";
+                    cin>>m2;
+                    cout<<"Enter the distance between the two bodies in m: ";
+                    cin>>dist;
+                    
+                    //Convert units and calculate force
+                    m1*=KG2G;
+                    m2*=KG2G;
+                    dist*=M2CM;       
+                    force=(G*m1*m2)/(dist*dist); 
+                    
+                    //Output results
+                    cout<<"The force of gravity between the two bodies is: "<<force<<"dynes."<<endl;
+                        
+                    
+                    cout<<"Would you like to run the program again? Y/N"<<endl;
+                    cin>>cntn6;
+                } while (cntn6=='Y'||cntn6=='y');
                 break;
 
             case 7:

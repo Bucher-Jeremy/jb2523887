@@ -39,9 +39,6 @@ int main(int argc, char** argv) {
         cout<<"5  --> Savitch_8thEd_Chap4_Prob5"<<endl;
         cout<<"6  --> Savitch_8thEd_Chap4_Prob6"<<endl;
         cout<<"7  --> Savitch_8thEd_Chap4_Prob7"<<endl;
-        cout<<"8  --> Savitch_8thEd_Chap4_Prob8"<<endl;
-        cout<<"9  --> Savitch_8thEd_Chap4_Prob9"<<endl;
-        cout<<"10 --> Savitch_8thEd_Chap4_Prob10"<<endl;
         cout<<"---------------------------------"<<endl;
         cin>>menitm;
 
@@ -305,7 +302,9 @@ int main(int argc, char** argv) {
                     force=(G*m1*m2)/(dist*dist); 
                     
                     //Output results
-                    cout<<"The force of gravity between the two bodies is: "<<force<<"dynes."<<endl;
+                    cout<<"The force of gravity between the two bodies is: "<<force<<"dynes."<<endl
+                        <<" "<<endl;
+                    
                         
                     
                     cout<<"Would you like to run the program again? Y/N"<<endl;
@@ -313,23 +312,7 @@ int main(int argc, char** argv) {
                 } while (cntn6=='Y'||cntn6=='y');
                 break;
 
-            case 8:
-                cout<<"Executing Savitch_8thEd_Chap4_Prob15."<<endl;
-                cout<<" "<<endl;
-                cout<<" "<<endl;
-                break;
-
-            case 9:
-                cout<<"Executing Savitch_8thEd_Chap4_Prob15."<<endl;
-                cout<<" "<<endl;
-                cout<<" "<<endl;
-                break;
-
-            case 10:
-                cout<<"Executing Savitch_8thEd_Chap4_Prob15."<<endl;
-                cout<<" "<<endl;
-                cout<<" "<<endl;
-                break;
+            
 
 
             default:

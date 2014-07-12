@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
         cout<<"3  --> Savitch_8thEd_Chap4_Prob3"<<endl;
         cout<<"4  --> Savitch_8thEd_Chap4_Prob4"<<endl;
         cout<<"5  --> Savitch_8thEd_Chap4_Prob5"<<endl;
-        cout<<"6  --> Savitch_8thEd_Chap4_Prob7"<<endl;
+        cout<<"6  --> Savitch_8thEd_Chap4_Prob6"<<endl;
         cout<<"7  --> Savitch_8thEd_Chap4_Prob7"<<endl;
         cout<<"8  --> Savitch_8thEd_Chap4_Prob8"<<endl;
         cout<<"9  --> Savitch_8thEd_Chap4_Prob9"<<endl;
@@ -246,8 +246,42 @@ int main(int argc, char** argv) {
                     cin>>cntn5;
                 } while (cntn5=='Y'||cntn5=='y');
                 break;
-
+                
             case 6:
+                cout<<"Executing Savitch_8thEd_Chap4_Prob6."<<endl;
+                cout<<" "<<endl;
+                cout<<" "<<endl;
+                char cntn7; //variable for continuation case 6
+                float inBal, mIntRte, intDue;   //initial balance,interest due
+                unsigned short numMnth; //monthly interest rate,number of months
+                do{
+                    //Obtain inputs
+                    cout<<"Enter the initial balance: $";
+                    cin>>inBal;
+                    cout<<"Enter the number of months for which interest must be paid: ";
+                    cin>>numMnth;
+                    cout<<"Enter the monthly interest rate: %";
+                    cin>>mIntRte;
+
+                    //Convert mIntRte to a decimal
+                    mIntRte/=PERCENT;
+
+                    //Loop to calculate the interest due
+                    unsigned short nLoop;
+                    for (nLoop=0; nLoop<numMnth; nLoop++){
+                        intDue=inBal*mIntRte;
+                        inBal+=intDue;
+                    }
+
+                    cout<<"The interest due is: $"<<intDue<<endl;
+
+
+                    cout<<"Would you like to run the program again? Y/N"<<endl;
+                    cin>>cntn7;
+                } while (cntn7=='Y'||cntn7=='y');
+                break;
+
+            case 7:
                 cout<<"Executing Savitch_8thEd_Chap4_Prob7."<<endl;
                 cout<<" "<<endl;
                 cout<<" "<<endl;
@@ -277,12 +311,6 @@ int main(int argc, char** argv) {
                     cout<<"Would you like to run the program again? Y/N"<<endl;
                     cin>>cntn6;
                 } while (cntn6=='Y'||cntn6=='y');
-                break;
-
-            case 7:
-                cout<<"Executing Savitch_8thEd_Chap4_Prob15."<<endl;
-                cout<<" "<<endl;
-                cout<<" "<<endl;
                 break;
 
             case 8:

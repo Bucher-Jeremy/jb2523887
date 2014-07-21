@@ -1,0 +1,31 @@
+ }case 2:{
+               cout<<"Round Two!"<<endl
+                   <<"Your category is: "<<endl 
+                   <<"Titles"<<endl;
+               cout<<"Thats correct! The phrase is:"<<endl
+                   <<"THE CATCHER IN THE RYE"<<endl;
+               break;
+           }case 3:{
+               cout<<"Round Three!"<<endl
+                   <<"Your category is: "<<endl
+                   <<"Landmarks"<<endl;
+               cout<<"Thats correct! The phrase is:"<<endl
+                   <<"THE GOLDEN GATE BRIDGE"<<endl;
+               break;
+           }case 4:{
+               cout<<"Round Four!"<<endl
+                   <<"Your category is: "<<endl
+                   <<"Star & Role"<<endl;
+               cout<<"Thats correct! The phrase is:"<<endl
+                   <<"JEFF BRIDGES AS THE BIG LEBOWSKI"<<endl;
+               break;
+           }case 5:{
+               cout<<"Bonus Round!"<<endl
+                   <<"Your category is: "<<endl
+                   <<"Family"<<endl;
+               cout<<"Thats correct! The phrase is:"<<endl
+                   <<"THE WRIGHT BROTHERS"<<endl;
+               break;
+           }default:{
+               cout<<" ";
+           }

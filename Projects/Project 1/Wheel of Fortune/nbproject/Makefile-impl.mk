@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Wheel of Fortune
+PROJECTNAME=wheel of fortune
 
 # Active Configuration
 DEFAULTCONF=Debug
